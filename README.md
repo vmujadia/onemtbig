@@ -26,7 +26,7 @@ This model supports translation between multiple Indian languages and scripts, i
 - Assamese (Bengali Script) - `as`: `asm_Beng`
 - Awadhi (Devanagari Script) - `aw`: `awa_Deva`
 - Bengali - `bn`: `ben_Beng`
-- Bihari - `bh`: `bho_Deva`
+- Bhojpuri - `bh`: `bho_Deva`
 - Braj - `br`: `bra_Deva`
 - Bodo - `bx`: `brx_Deva`
 - Dogri - `doi`: `doi_Deva`
