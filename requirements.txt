@@ -1,0 +1,6 @@
+ctranslate2
+numpy
+torch
+sentencepiece
+requests
+tqdm
