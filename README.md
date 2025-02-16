@@ -152,7 +152,7 @@ python infer_code_python.py
 To send an inference request using **cURL**, run the following command:
 
 ```bash
-curl -X POST "http://10.4.25.40:8000/v2/models/model_onemtbig/infer"      -H "Content-Type: application/json"      -d '{
+curl -X POST "http://localhost:8000/v2/models/model_onemtbig/infer"      -H "Content-Type: application/json"      -d '{
           "inputs": [
             {
               "name": "INPUT_JSON",
