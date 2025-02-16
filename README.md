@@ -174,6 +174,7 @@ This project is licensed under CC BY-NC 4.0.
 ## Ownership and Contributors
 
 **Submitted by**: IIIT Hyderabad
+
 **About**: The NLP-MT Lab in LTRC works on NLP research and Machine Translation for Indian Languages.
 
 ### Team Members
