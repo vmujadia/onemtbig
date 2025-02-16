@@ -4,14 +4,20 @@ import json
 # Triton server URL
 url = "http://10.4.25.40:8000/v2/models/model_onemtbig/infer"
 
+# Take user input
+source_text = input("Enter source text: ")
+model_id = int(input("Enter model ID: "))
+source_lang = input("Enter source language (e.g., en): ")
+target_lang = input("Enter target language (e.g., te): ")
+
 # Request payload
 input_data = {
-    "input": [{"source": "Hello, My name is Vandan."}],
+    "input": [{"source": source_text}],
     "config": {
-        "modelId": 101,
+        "modelId": model_id,
         "language": {
-            "sourceLanguage": "en",
-            "targetLanguage": "te"
+            "sourceLanguage": source_lang,
+            "targetLanguage": target_lang
         }
     }
 }
@@ -47,4 +53,3 @@ output = json.loads(output_data['outputs'][0]['data'][0])
 # Print Output JSON
 print("\n=== Output Response ===")
 print(json.dumps(output, indent=4))
-
