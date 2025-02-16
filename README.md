@@ -1,4 +1,4 @@
-# onemtbig: 36*35 Indian Subcontinent Language Translation (Powered by Bhashaverse)
+# onemtbig: 36*36 Indian Subcontinent Language Translation (Powered by Bhashaverse)
 
 ## Overview
 
