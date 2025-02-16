@@ -1,0 +1,41 @@
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+.env/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and output files
+logs/
+*.log
+output/
+*.out
+
+# Ignore model files and large datasets
+models/
+data/
+*.h5
+*.ckpt
+*.pth
+*.onnx
+
+# Ignore Docker-related files
+docker-compose.override.yml
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.bak
+iiith-onemtbig/
+iiith-onemtbig/*
+model.zip

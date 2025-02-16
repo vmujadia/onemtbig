@@ -2,13 +2,13 @@ import requests
 import json
 
 # Triton server URL
-url = "http://10.4.25.40:8000/v2/models/model_onemtbig/infer"
+url = "http://localhost:8000/v2/models/model_onemtbig/infer"
 
 # Take user input
-source_text = input("Enter source text: ")
-model_id = int(input("Enter model ID: "))
-source_lang = input("Enter source language (e.g., en): ")
-target_lang = input("Enter target language (e.g., te): ")
+source_text = "My name is Vandan"
+model_id = "1"
+source_lang = "en"
+target_lang = "hi"
 
 # Request payload
 input_data = {

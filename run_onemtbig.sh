@@ -23,11 +23,11 @@ fi
 
 # Step 2: Build the Docker image
 echo "Building the Docker image: $DOCKER_IMAGE..."
-docker build -t $DOCKER_IMAGE .
+sudo docker build -t $DOCKER_IMAGE .
 
 # Step 3: Run the Triton Server Container
 echo "Running Triton Server container..."
-docker run --gpus=all --rm -p 8000:8000 -p 8001:8001 -p 8002:8002 \
+sudo docker run --gpus=all --rm -p 8000:8000 -p 8001:8001 -p 8002:8002 \
     -v $(pwd)/$MODEL_DIR/$MODEL_DIR:/models $DOCKER_IMAGE
 
 echo "Triton Server is now running!"
