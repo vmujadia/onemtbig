@@ -70,6 +70,36 @@ This model supports translation between multiple Indian languages and scripts, i
 - **`run_onemtbig.sh`** - Shell script to set up and run inference.
 - **`ulca_model.json`** - Model configuration file.
 
+## Setup and Run Inference
+
+Instructions for the **onemtbig** machine translation model using **Triton Inference Server**. 
+The script `run_onemtbig.sh` automates the process of downloading the model, building a Docker image, and running the inference server.
+
+### Prerequisites
+
+Before running the script, ensure you have the following installed:
+
+- **Docker** with GPU support (`nvidia-docker`)
+- **wget** and **unzip** for downloading models
+- **NVIDIA Triton Inference Server**
+
+### Running the Setup
+
+Execute the following command to set up and run the inference server:
+
+```bash
+bash run_onemtbig.sh
+```
+### Expected Output
+
+After running the script, you should see logs indicating that **Triton Server is running** and ready to accept inference requests.
+
+### Stopping the Server
+
+To stop the running container, press `CTRL+C`.
+
+
+
 ## Example Inference
 
 To run inference using the model, execute:
