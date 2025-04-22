@@ -6,6 +6,8 @@ set -e  # Exit on error
 MODEL_URL="https://vandanresearch.sgp1.digitaloceanspaces.com/bhashaverse-models/machine-translation/onemtbig/iiith-onemtbig.zip"
 MODEL_DIR="iiith-onemtbig"
 DOCKER_IMAGE="iiith-onemtbig"
+REPLACEMENT_MODEL="model_base.py"
+TARGET_MODEL_PATH="$MODEL_DIR/iiith-onemtbig/model_onemtbig/1/model.py"
 
 echo "Starting the setup process..."
 
@@ -19,6 +21,14 @@ if [ ! -d "$MODEL_DIR" ]; then
     echo "Model downloaded and extracted successfully."
 else
     echo "Model directory already exists, skipping download."
+fi
+
+if [ -f "$REPLACEMENT_MODEL" ]; then
+    echo "Replacing $TARGET_MODEL_PATH with $REPLACEMENT_MODEL"
+    cp "$REPLACEMENT_MODEL" "$TARGET_MODEL_PATH"
+else
+    echo "Error: $REPLACEMENT_MODEL not found in current directory!"
+    exit 1
 fi
 
 # Step 2: Build the Docker image
