@@ -3,11 +3,13 @@ import subprocess
 import requests
 import zipfile
 from tqdm import tqdm
+import shutil
 
 # Define URLs and paths
 MODEL_URL = "https://vandanresearch.sgp1.digitaloceanspaces.com/bhashaverse-models/machine-translation/onemtbig/iiith-onemtbig.zip"
 MODEL_DIR = "models"
 MODEL_ZIP = "iiith-onemtbig.zip"
+MODEL_BASE = "model_base.py"
 
 def download_model():
     """Downloads the model zip file with progress bar."""
@@ -44,7 +46,20 @@ def extract_model():
     with zipfile.ZipFile(MODEL_ZIP, "r") as zip_ref:
         zip_ref.extractall(MODEL_DIR)
 
-    print(f"Model extracted to {MODEL_DIR}")
+    
+    model_py_target = os.path.join(
+        MODEL_DIR, "iiith-onemtbig", "model_onemtbig", "1", "model.py"
+    )
+
+    # Replace it with model_base.py
+    if os.path.exists(MODEL_BASE):
+        print(f"Replacing {model_py_target} with {MODEL_BASE}")
+        shutil.copy(MODEL_BASE, model_py_target)
+    else:
+        print(f"Error: {MODEL_BASE} not found.")
+
+    print(f"Model ready at {MODEL_DIR}")
+
 
 def start_triton():
     """Starts the Triton Inference Server with the extracted model."""
