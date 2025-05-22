@@ -229,6 +229,20 @@ The response from the model should look like this:
 
 This inference model is built using data from the **[Bhashik Parallel Corpora - Generic](https://huggingface.co/datasets/ltrciiith/bhashik-parallel-corpora-generic)** dataset.
 
+## Stage 2 (if Required)
+
+### Build the Docker image
+docker build -t lang-flask-server .
+
+### Run the container with TRITON_URL set
+docker run -p 8076:8076 -e TRITON_URL="http://10.4.25.40:8000/v2/models/model_onemtbig/infer" lang-flask-server
+
+### Curl Call
+curl -X POST http://localhost:8076/translate \
+     -H "Content-Type: application/json" \
+     -d '{"source_text": "Hello world", "source_lang": "en", "target_lang": "hi"}'
+
+
 ## License
 
 This project is licensed under CC BY-NC 4.0.
