@@ -1,0 +1,17 @@
+# Use an official Python image
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy app code into the container
+COPY app.py /app
+
+# Install Flask and requests
+RUN pip install --no-cache-dir flask requests
+
+# Expose the desired port
+EXPOSE 8076
+
+# Set default command
+CMD ["python", "server_level_2.py"]
