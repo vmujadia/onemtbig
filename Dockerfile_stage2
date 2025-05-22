@@ -11,7 +11,7 @@ COPY app.py /app
 RUN pip install --no-cache-dir flask requests
 
 # Expose the desired port
-EXPOSE 8076
+EXPOSE 8084
 
 # Set default command
 CMD ["python", "server_level_2.py"]
